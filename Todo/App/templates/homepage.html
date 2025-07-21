@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="nav-left">
+                <div class="logo">
+                    <ion-icon name="clipboard"></ion-icon>
+                </div>
+                <h1>ToDo</h1>
+            </div>
+             <div class="nav-items-center">
+                <h3>Home</h3>
+                <h3>Task</h3>
+                <h3>Features</h3>
+                <h3>About</h3></a>
+            </div>
+            <div class="nav-right">
+                <button id="btn1">Login</button>
+                <button id="btn2">SignUp</button>
+            </div>
+        </div>
+        <div class="banner">
+            <div class="banner-left">
+                
+            </div>
+        </div>
+<section class="dashboard-box">
+  <div class="card">
+    <h3>Integration Tools</h3>
+    <p>Avg Response Time:</p>
+    <h2>365 <span class="tag">+12%</span></h2>
+    <div class="gauge">
+      <canvas id="gaugeChart"></canvas>
+    </div>
+  </div>
+  <div class="stats-card">
+    <div class="stat black">1,273<br><span>Total Customers</span></div>
+    <div class="stat">828<br><span>Active Customers</span></div>
+    <div class="stat">💵 $10,928<br><span>Revenue</span></div>
+    <div class="stat">💸 $2,912<br><span>Expense</span></div>
+  </div>
+</section>
+<section class="hero">
+  <h5>Connecting people</h5>
+  <h1>Turn To Dos into Done with <span class="brand">⚡ FlowUp</span></h1>
+  <p>Imagine a day where tasks are clear, deadlines are met, and your to-do list works for you, not against you.</p>
+  <div class="buttons">
+    <button class="start-btn">Start for Free</button>
+    <a href="#" class="learn-more">Learn more →</a>
+  </div>
+  <div class="stats">
+    <div><strong>500+</strong><br>Teams</div>
+    <div><strong>5M</strong><br>Hours Saved</div>
+    <div><strong>90%</strong><br>User Satisfaction</div>
+  </div>
+</section> 
+
+
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const ctx = document.getElementById('gaugeChart');
+new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        datasets: [{
+            data: [75, 25],
+            backgroundColor: ['#8e54e9', '#e0e0e0']
+        }]
+    },
+    options: {
+        cutout: '80%',
+        plugins: { legend: { display: false } }
+    }
+});
+</script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>  
+<script src="{% static}"></script>
+    <div class="login" id="loginwrap">
+        <div class="login-card">
+            <div class="login-details">
+                <form action="" method="post">
+                <div class="head">
+                <h3>Login</h3>
+                <h4 id="closebtn" onclick =closePopup()>X</h4></div>
+                <input type="text" name="username" placeholder="Username">
+                <input type="text" name="password" placeholder="Password">
+                <button type="submit" id="btn" onclick="pro()">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
