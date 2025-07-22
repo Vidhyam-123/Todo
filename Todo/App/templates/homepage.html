@@ -12,7 +12,7 @@
         <div class="navbar">
             <div class="nav-left">
                 <div class="logo">
-                    <ion-icon name="clipboard"></ion-icon>
+                    <img src="{% static 'images/logo.png' %}" alt="" srcset="">
                 </div>
                 <h1>ToDo</h1>
             </div>
@@ -23,70 +23,101 @@
                 <h3>About</h3></a>
             </div>
             <div class="nav-right">
-                <button id="btn1">Login</button>
-                <button id="btn2">SignUp</button>
+                <button id="btn1" onclick="pro()">Login</button>
+                <button id="btn2" onclick="signup()">SignUp</button>
             </div>
         </div>
-        <div class="banner">
-            <div class="banner-left">
-                
+        <div class="home-content">
+            <div class="left-card">
+                <div class="integration-tools">
+                    <div class="left-content">
+                        <h4>Integration Tools</h4>
+                        <h6>Avg Response Time : </h6>
+                        <div class="response-time">365 <span class="tag">✔ Fast</span></div>
+                        <h6>Second</h6>
+                    </div>
+                    <div class="right-img">
+                        <img src="{% static 'images/integration img.png' %}" alt="" class=""> 
+                    </div>
+                </div>
+                <div class="stat-wrapper">
+                    <div class="stat-card total">
+                        <div class="icon"><ion-icon name="people-outline"></ion-icon></div>
+                        <div class="stat-text">
+                        <div class="value">1,273</div>
+                        <div class="label">Total Customers</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="icon"><ion-icon name="person-outline"></ion-icon></div>
+                        <div class="stat-text">
+                        <div class="value">828</div>
+                        <div class="label">Active Customers</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="icon"><ion-icon name="wallet"></ion-icon></div>
+                        <div class="stat-text">
+                        <div class="value">$10,928</div>
+                        <div class="label">Revenue</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="icon"><ion-icon name="card"></ion-icon></div>
+                        <div class="stat-text">
+                        <div class="value">$2,912</div>
+                        <div class="label">Expense</div>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+            <div class="right-content">
+                <div class="right-text">
+                    <h3>connecting people</h3>
+                    <h1>
+                        Turn Tasks 
+                        <span class="highlight-icon"><ion-icon name="radio-outline"></ion-icon></span><br>
+                        into Done with 
+                        <span class="flash-icon"><ion-icon name="flash"></ion-icon></span>
+                        <span class="ToDo">ToDo</span>
+                    </h1>
+                    <p>Imagine a day where tasks are clear, deadlines are met, and your to-do list works for you, <br> not against you.</p>
+                </div>
+                <div class="right-buttons">
+                    <button class="Startforfree-button">
+                        Start for Free
+                        <span class="arrow"><ion-icon name="arrow-forward-sharp"></ion-icon></span> <!-- Right Arrow -->
+                    </button>
+                    <button class="learnmore-button">
+                        Learn more
+                        <span class="arrow"><ion-icon name="arrow-forward-sharp"></ion-icon></span> <!-- Right Arrow -->
+                    </button>    
+                </div>
+                <div class="blocks">
+                    <div class="first-block">
+                        <h4>Trusted by Teams</h4>
+                        <h2>500+</h2>
+                    </div>
+                    <div class="first-block">
+                        <h4>Saved Million Hours</h4>
+                        <h2>5M</h2>
+                    </div>
+                    <div class="first-block">
+                        <h4>User Satisfaction</h4>
+                        <h2>90%</h2>
+                    </div>
+                </div>
             </div>
         </div>
-<section class="dashboard-box">
-  <div class="card">
-    <h3>Integration Tools</h3>
-    <p>Avg Response Time:</p>
-    <h2>365 <span class="tag">+12%</span></h2>
-    <div class="gauge">
-      <canvas id="gaugeChart"></canvas>
+        
     </div>
-  </div>
-  <div class="stats-card">
-    <div class="stat black">1,273<br><span>Total Customers</span></div>
-    <div class="stat">828<br><span>Active Customers</span></div>
-    <div class="stat">💵 $10,928<br><span>Revenue</span></div>
-    <div class="stat">💸 $2,912<br><span>Expense</span></div>
-  </div>
-</section>
-<section class="hero">
-  <h5>Connecting people</h5>
-  <h1>Turn To Dos into Done with <span class="brand">⚡ FlowUp</span></h1>
-  <p>Imagine a day where tasks are clear, deadlines are met, and your to-do list works for you, not against you.</p>
-  <div class="buttons">
-    <button class="start-btn">Start for Free</button>
-    <a href="#" class="learn-more">Learn more →</a>
-  </div>
-  <div class="stats">
-    <div><strong>500+</strong><br>Teams</div>
-    <div><strong>5M</strong><br>Hours Saved</div>
-    <div><strong>90%</strong><br>User Satisfaction</div>
-  </div>
-</section> 
 
 
-    </div>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-const ctx = document.getElementById('gaugeChart');
-new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-        datasets: [{
-            data: [75, 25],
-            backgroundColor: ['#8e54e9', '#e0e0e0']
-        }]
-    },
-    options: {
-        cutout: '80%',
-        plugins: { legend: { display: false } }
-    }
-});
-</script>
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>  
-<script src="{% static}"></script>
-    <div class="login" id="loginwrap">
-        <div class="login-card">
+    <div class="login" id="loginwrap" >
+        <div class="login-card" >
             <div class="login-details">
                 <form action="" method="post">
                 <div class="head">
@@ -94,10 +125,34 @@ new Chart(ctx, {
                 <h4 id="closebtn" onclick =closePopup()>X</h4></div>
                 <input type="text" name="username" placeholder="Username">
                 <input type="text" name="password" placeholder="Password">
-                <button type="submit" id="btn" onclick="pro()">Login</button>
+                <button type="submit" id="btn" >Login</button>
                 </form>
             </div>
         </div>
     </div>
+    
+    <div class="signup" id="signupwrap" >
+        <div class="signup-card" >
+            <div class="signup-details">
+                <form action="" method="post">
+                <div class="head">
+                <h3>Signup</h3>
+                <h4 id="closbtn" onclick =closePop()>X</h4></div>
+                <input type="file" name="image">
+                <input type="text" name="firstname" placeholder="Firstname">
+                <input type="text" name="lastname" placeholder="Lastname">
+                <input type="text" name="email" placeholder="Email">
+                <input type="tel" name="number" id="phone" placeholder="Phone number" maxlength="10" minlength="10" required>
+                <input type="text" name="username" placeholder="Username">
+                <input type="text" name="password" placeholder="Password">
+                <button type="submit" id="btn" >SignUp</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>  
+<script src="{% static 'js/homepage.js' %}"></script>
 </body>
 </html>
