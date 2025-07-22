@@ -1,6 +1,12 @@
 function pro(){
-    document.getElementById("profwrap").style.display="flex";
+    document.getElementById("loginwrap").style.display="flex";
 }
 function closePopup() {
-    document.getElementById("profwrap").style.display = "";
+    document.getElementById("loginwrap").style.display = "";
+}
+function signup(){
+    document.getElementById("signupwrap").style.display="flex";
+}
+function closePop() {
+    document.getElementById("signupwrap").style.display = "";
 }

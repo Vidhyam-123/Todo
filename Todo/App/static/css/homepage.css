@@ -9,18 +9,25 @@
   align-items: center;
   padding: 10px 30px;
   height: 40px;
+  box-shadow: 0 0 40px rgb(235, 230, 230);
 }
 .nav-left{
     display: flex;
+    gap: 10px;
+    h1{
+        margin-top: 4px;
+    }
 }
 .logo{
-    width: 25px;
-    height: 25px;
-    background-color: rgb(176, 241, 176);
+    img{
+    width: 45px;
+    height: 45px;
+    background-color: rgb(254, 254, 254);
     display: flex;
     align-items: center;
-    border-radius: 7px;
-    margin-top: 10px;
+    /* border-radius: 7px; */
+    /* margin-top: 10px; */
+    }
     
     
 }
@@ -29,8 +36,12 @@
     gap: 30px;
     h3{
         font-size: 14px;
+        font-weight: 600;
        
     }
+}
+.nav-items-center :hover{
+    color: rgb(4, 92, 92) ;
 }
 .nav-right{
     gap: 20px;
@@ -59,39 +70,7 @@
   font-weight: 200;
   border-radius: 13px 13px 13px 13px;
 }
-/* .hero {
-    padding: 50px;
-    background: #fff;
-    font-family: sans-serif;
-}
 
-.brand {
-    color: #8e54e9;
-}
-
-.start-btn {
-    background: #000;
-    color: lime;
-    padding: 10px 20px;
-    border-radius: 8px;
-}
-
-.dashboard-box {
-    padding: 30px;
-    background: #f7f7f7;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-} */
-#gaugeChart {
-    width: 150px !important;
-    height: 150px !important;
-    display: block;
-    margin: 20px auto;
-}
-.card{
-    height: 300px;
-    width: 300px;
-}
 .login {
     display: none;
     flex-direction: column;
@@ -112,8 +91,8 @@
     display: flex;
     position: relative;
     width: 350px;
-    height: 450px;
-    background-color: rgb(113, 189, 231);
+    height: 350px;
+    background-color: teal;
     border-radius: 20px;
 
 }
@@ -122,6 +101,7 @@
     cursor: pointer;
     top: 20px;
     right: 10px;
+    color: red;
 }
 
 .login-details {
@@ -133,17 +113,7 @@
     padding: 30px;
     width: 100%;
     max-width: 300px;
-    h3{
-        font-size: 25px;
-       margin-left: 35%;
-    }
-    h2{
-        color: rgb(11, 10, 10);
-        margin-left: 90%;
-        cursor: pointer;
-        font-size: 18px;
-        
-    }
+   
 }
 
 .login-details input {
@@ -169,4 +139,337 @@
 }
 .head{
   display: flex;
+  margin-bottom: 10px;
+   h3{
+        font-size: 25px;
+       margin-left: 35%;
+    }
+    h4{
+        color: rgb(11, 10, 10);
+        margin-left: 90%;
+        cursor: pointer;
+        font-size: 18px;
+        
+    }
 }
+#btn{
+    width: 80px;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 13px 13px 13px 13px;
+    margin-left: 40%;
+    background-color:black;  
+    color: white; 
+
+}
+.signup {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    width: 100%;
+    height: 100vh;
+    /* background-color: rgba(174, 16, 16, 0.341); */
+    backdrop-filter: blur(5px);
+
+}
+#closbtn{
+    position: absolute;
+    cursor: pointer;
+    top: 20px;
+    right: 10px;
+    color: red;
+}
+.signup-card {
+    display: flex;
+    position: relative;
+    width: 350px;
+    height: 550px;
+    background-color: teal;
+    border-radius: 20px;
+
+}
+.signup-details {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+    gap: 15px;
+    padding: 30px;
+    width: 100%;
+    max-width: 300px;
+   
+}
+
+.signup-details input {
+    width: 90%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background: #f0f0f0;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.signup-details input::placeholder {
+    color: #888;
+}
+
+.signup-details input:focus {
+    background: #fff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 20, 42, 0.3); /* glowing border */
+}
+.home-content{
+    display: flex;
+    margin-top: 30px;
+    gap: 80px;
+}
+.left-card{
+    margin-left: 12%;
+    height: 500px;
+    width: 400px;
+    border-radius: 13px;
+    background-color: #ebeaea;
+    /* border: 1px solid black; */
+}
+.integration-tools{
+    height: 100px;
+    width: 300px;
+    border-radius: 13px;
+    background-color: white;
+    display: flex;
+    align-items:center;
+    padding-left: 10px;
+    gap: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+
+}
+.left-content{
+    gap: 10px;
+    line-height: 15px;
+    h4{
+        font-size: 12px;
+    }
+    h6{
+        font-size: 9px;
+        color: #888;
+    }
+}
+    /* span{ */
+.response-time{
+    display: flex;
+    gap: 10px;
+}
+.tag{   
+     border-radius: 13px;
+     background-color: rgb(174, 233, 46);
+    border: 1px solid black;   
+    height: 13px;  
+    width: 30px;
+    font-size: 9px;
+    
+    }
+/* } */
+.right-img{
+    margin-top: 8px;
+    img{
+        height: 90px;
+    }
+}
+.stat-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+.stat-card {
+    display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px ;
+      border-radius: 20px;
+      background: white;
+      width: 170px;
+      height: 30px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card.total {
+      background: #000;
+      color: white;
+}
+
+.stat-card.total .icon {
+      background: #d4ff00;
+}
+
+.icon {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+}
+
+.stat-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+}
+
+.stat-text .value {
+      font-size: 18px;
+      font-weight: 700;
+}
+
+.stat-text .label {
+      font-size: 13px;
+      color: #888;
+      margin-top: 2px;
+}
+
+.stat-card.total .label {
+      color: #ccc;
+}
+.right-content{
+    h3{
+        /* border: 1px solid black; */
+        background-color: #ebeaea;
+        border-radius: 13px;
+        height: 18px;
+        width: 120px;
+        font-size: 12px;
+        padding-left: 10px;
+        margin-top: 15px;
+    }
+    h1{
+        margin-top: 25px;
+        font-size: 48px;
+   font-weight: 700;
+      line-height: 1.2;
+      color: #000;
+    }
+
+    .highlight-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #d4ff00;
+      border-radius: 50%;
+      width: 34px;
+      height: 34px;
+      font-size: 14px;
+      vertical-align: middle;
+      margin-left: 6px;
+    }
+
+    .flash-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #9c9898;
+      border-radius: 50%;
+      width: 34px;
+      height: 34px;
+      font-size: 14px;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+    p{
+        font-size: 11px;
+        line-height: 20px;
+        color: #888;
+    }
+
+   
+}
+.right-buttons{
+    display: flex;
+    gap: 25px;
+    margin-top: 20px;
+}
+.Startforfree-button {
+      display: inline-flex;
+      align-items: center;
+      background-color: #000;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      gap: 10px;
+      transition: background 0.3s ease;
+    }
+
+    .Startforfree-button .arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #d4ff2a; /* neon green/yellow */
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      font-size: 18px;
+      color: black;
+    }
+    .learnmore-button{
+      display: inline-flex;
+      align-items: center;
+      background-color:white;
+      color: black;
+      border: 1px solid rgb(230, 228, 228);
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      gap: 10px;
+      transition: background 0.3s ease;
+    }
+    .learnmore-button .arrow{
+        display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white; /* neon green/yellow */
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      font-size: 18px;
+      color: black;
+    }
+    .blocks{
+        display: flex;
+        gap: 15px;
+        margin-top: 60px;
+    }
+    .first-block{
+        text-align: center;
+        line-height: 35px;
+        h4{
+            font-size: 12px;
+        }
+        h2{
+            font-weight: 100;
+        }
+    }
+   
