@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  height: 40px;
+  box-shadow: 0 0 40px rgb(235, 230, 230);
+}
+.nav-left{
+    display: flex;
+    gap: 10px;
+    h1{
+        margin-top: 4px;
+    }
+}
+.logo{
+    img{
+    width: 45px;
+    height: 45px;
+    background-color: rgb(254, 254, 254);
+    display: flex;
+    align-items: center;
+    /* border-radius: 7px; */
+    /* margin-top: 10px; */
+    }
+    
+    
+}
+.nav-items-center{
+    display: flex;
+    gap: 30px;
+    h3{
+        font-size: 14px;
+        font-weight: 600;
+       
+    }
+}
+.nav-items-center :hover{
+    color: rgb(4, 92, 92) ;
+}
+.nav-right{
+    gap: 20px;
+}
+#btn1{
+  cursor: pointer;
+  height: 35px;
+  width: 70px;
+  border: 1px solid gray;
+  outline:none;
+  color: black;
+  background-color: white;
+  font-size: 14px;
+  font-weight: 200;
+  border-radius: 13px 13px 13px 13px;
+}
+form {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Label styling */
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Input fields */
+form input[type="text"],
+form input[type="date"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+form input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Submit button */
+form button[type="submit"] {
+    background-color: teal;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.edit-section{
+    h2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgb(96, 193, 160);
+        margin: 20px;
+    }
+}
+.back-button{
+    ion-icon{
+        height: 50px;
+        width: 30px;
+    }
+    
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}

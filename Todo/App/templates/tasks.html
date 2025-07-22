@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/tasks.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="nav-left">
+                <div class="logo">
+                    <img src="{% static 'images/logo.png' %}" alt="" srcset="">
+                </div>
+                <h1>ToDo</h1>
+            </div>
+             <div class="nav-items-center">
+                <a href="{ % url 'homepage' %}"><h3>Home</h3></a>
+                <h3>Task</h3>
+                <h3>Features</h3>
+                <h3>About</h3></a>
+            </div>
+            <div class="nav-right">
+                <button id="btn1" onclick="">Logout</button>
+            </div>
+        </div>
+        <div class="head-section">
+            <h1>Welcome To ToDoApp</h1>
+            <h6>Add your todos now</h6>
+        </div>
+        <div class="form-container">
+            <form action="">
+                <div class="addtodo">
+                <input type="text" name="task" placeholder="Enter your tasks">
+                <input type="date" name="date" placeholder="">
+                <button type="submit" id="add">Add todo</button>
+                </div>
+            </form>
+        
+        </div>
+        <div class="todo-tables">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sl No</th>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Todos</th>
+                        <th>Deadline</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Vidhya</td>
+                        <td>22/07/2025</td>
+                        <td>form validation</td>
+                        <td>31/072025</td>
+                        <td>
+                            <form action="" method="post" style="display:inline;">
+                                <button type="submit" class="btn green"><ion-icon name="checkbox"></ion-icon></button>
+                            </form>
+                            <a href="{% url 'edit' %}"><button type="submit" class="btn blue" ><ion-icon name="create-outline"></ion-icon> </button></a>
+                            <button type="submit" class="btn red"><ion-icon name="trash-outline"></ion-icon> </button>
+                            <button type="submit" class="btn black"><ion-icon name="close-circle-outline"></ion-icon></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>  
+<script src="{% static 'js/tasks.js' %}"></script>
+</body>
+</html>

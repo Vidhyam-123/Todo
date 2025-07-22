@@ -31,6 +31,10 @@
     
     
 }
+a{
+    text-decoration: none;
+    color: inherit;
+}
 .nav-items-center{
     display: flex;
     gap: 30px;
