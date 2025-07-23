@@ -205,12 +205,13 @@
     <div class="login" id="loginwrap" >
         <div class="login-card" >
             <div class="login-details">
-                <form action="" method="post">
+                <form action="{% url 'login' %}" method="post">{% csrf_token %}
                 <div class="head">
                 <h3>Login</h3>
                 <h4 id="closebtn" onclick =closePopup()>X</h4></div>
                 <input type="text" name="username" placeholder="Username">
                 <input type="text" name="password" placeholder="Password">
+                <p>{{msg}}</p>
                 <button type="submit" id="btn" >Login</button>
                 </form>
             </div>
@@ -220,7 +221,7 @@
     <div class="signup" id="signupwrap" >
         <div class="signup-card" >
             <div class="signup-details">
-                <form action="" method="post">
+                <form action="{% url 'signup' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
                 <div class="head">
                 <h3>Signup</h3>
                 <h4 id="closbtn" onclick =closePop()>X</h4></div>
