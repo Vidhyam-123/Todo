@@ -155,7 +155,7 @@ th, td {
 .green { background-color: #28a745; }  /* Done */
 .blue { background-color: #007bff; }   /* Edit */
 .red { background-color: #dc3545; }    /* Delete */
-.dark { background-color: black; }   /* Close */
+.black { background-color: black; }   /* Close */
 
 .btn ion-icon {
     font-size: 20px;
