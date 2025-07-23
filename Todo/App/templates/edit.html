@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/edit.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="nav-left">
+                <div class="logo">
+                    <img src="{% static 'images/logo.png' %}" alt="" srcset="">
+                </div>
+                <h1>ToDo</h1>
+            </div>
+             <div class="nav-items-center">
+                <h3>Home</h3>
+                <h3>Task</h3>
+                <h3>Features</h3>
+                <h3>About</h3></a>
+            </div>
+            <div class="nav-right">
+                <button id="btn1" onclick="">Logout</button>
+            </div>
+        </div>
+        <a href="{% url 'tasks' %}"><div class="back-button"><ion-icon name="arrow-back-circle-outline"></ion-icon></div></a>
+        
+        <div class="edit-section">
+            <h2>Start edit your tasks here.</h2>
+            <form action="" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" name="name"  required><br>
+
+                <label for="date">Date:</label>
+                <input type="date" name="date" required><br>
+
+                <label for="todo">Todos:</label>
+                <input type="text" name="todo"  required><br>
+
+                <label for="deadline">Deadline:</label>
+                <input type="date" name="deadline"  required><br>
+
+                <div class="button-container">
+                    <button type="submit">Update</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>  
+<!-- <script src="{% static 'js/homepage.js' %}"></script> -->
+</body>
+</html>

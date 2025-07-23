@@ -31,6 +31,10 @@
     
     
 }
+a{
+    text-decoration: none;
+    color: inherit;
+}
 .nav-items-center{
     display: flex;
     gap: 30px;
@@ -92,8 +96,9 @@
     position: relative;
     width: 350px;
     height: 350px;
-    background-color: teal;
+    background-color: rgb(131, 231, 231);
     border-radius: 20px;
+    animation: popup 0.3s ease-in-out;
 
 }
 #closebtn{
@@ -101,7 +106,7 @@
     cursor: pointer;
     top: 20px;
     right: 10px;
-    color: red;
+    color: rgb(249, 131, 131);
 }
 
 .login-details {
@@ -184,14 +189,14 @@
     cursor: pointer;
     top: 20px;
     right: 10px;
-    color: red;
+    color: rgb(249, 131, 131);
 }
 .signup-card {
     display: flex;
     position: relative;
     width: 350px;
     height: 550px;
-    background-color: teal;
+    background-color: rgb(131, 231, 231);
     border-radius: 20px;
 
 }
@@ -498,6 +503,7 @@
    .feature-card{
     height: 230px;
     width: 260px;
+    /* background-color: #000; */
     border: 1px solid rgb(235, 233, 233);
     border-radius: 13px;
     box-shadow: 0 0 20px rgb(240, 238, 238);
@@ -513,6 +519,27 @@
         margin-bottom: 28px; 
 
       }
+   }
+
+   .feature-row1 :hover{
+    background-color: black;
+    h3{
+        color: white;
+    }
+    .card-icon{
+        background-color: #37ff00;
+    }
+
+   }
+   .feature-row2 :hover{
+    background-color: black;
+    h3{
+        color: white;
+    }
+    .card-icon{
+        background-color: #37ff00;
+    }
+
    }
    .card-icon{
         margin-top: 20px;
@@ -541,14 +568,15 @@
       align-items: center;
       color: black;
       border: none;
+      outline: none;
       background-color: white;
       padding: 12px 20px;
-      border-radius: 999px;
+      border-radius: 30px;
       font-size: 16px;
       font-weight: 500;
       cursor: pointer;
       gap: 10px;
-      transition: background 0.3s ease;
+      /* transition: background 0.3s ease; */
    }
    .explore-button .arrow-icon{
     display: flex;
@@ -558,6 +586,7 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    margin-bottom: 60px;
    }
    .feature-row1{
     margin-left: 20px;
@@ -570,6 +599,16 @@
     display: flex;
     gap: 30px;
     justify-content: space-evenly;
+   }
+   @keyframes popup{
+    from{
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
    }
 
    

@@ -8,3 +8,7 @@ from django.contrib.auth import authenticate,login,logout
 # Create your views here.
 def homepage(request):
     return render(request,'homepage.html')
+def tasks(request):
+    return render(request,'tasks.html')
+def edit(request):
+    return render(request,'edit.html')
