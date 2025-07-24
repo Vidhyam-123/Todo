@@ -41,3 +41,8 @@ def userlogin(request):
             print("No such user found")
             msg="invalid login credentials"
         print(username,password)
+    return render(request,'homepage.html',{'msg':msg})
+
+def userlogout(request):
+    logout(request)
+    return HttpResponseRedirect(reverse("homepage"))
