@@ -7,7 +7,8 @@ from django.contrib.auth import authenticate,login,logout
 
 # Create your views here.
 def homepage(request):
-    return render(request,'homepage.html')
+    prof = Profile.objects.filter(user=request.user).first()
+    return render(request, 'homepage.html', {'prof': prof})
 def tasks(request):
     return render(request,'tasks.html')
 def edit(request):
@@ -46,3 +47,19 @@ def userlogin(request):
 def userlogout(request):
     logout(request)
     return HttpResponseRedirect(reverse("homepage"))
+
+def profileedit(request,pk):
+    proedit=Profile.objects.filter(pk=pk).first()    
+    if request.method == "POST":
+        proedit.Firstname = request.POST.get("firstname")
+        proedit.Lastname = request.POST.get("lastname")
+        proedit.Email = request.POST.get("mail")
+        proedit.Phonenumber = request.POST.get("number")
+        if "image" in request.FILES:
+            proedit.image = request.FILES["image"]
+        proedit.save()
+        return HttpResponseRedirect(reverse('homepage'))
+
+    return render(request, 'homepage.html', {'prof': proedit})
+
+
