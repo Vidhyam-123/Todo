@@ -12,3 +12,37 @@ def tasks(request):
     return render(request,'tasks.html')
 def edit(request):
     return render(request,'edit.html')
+def signup(request):
+    if request.method=="POST":
+        user=User.objects.create(username=request.POST.get("username"))
+        user.set_password(request.POST.get("password"))
+        user.save()
+        Profile.objects.create(
+            user=user,
+            Firstname=request.POST.get("firstname"),
+            Lastname=request.POST.get("lastname"),
+            Email=request.POST.get("email"),
+            image=request.FILES["image"],
+            Phonenumber=request.POST.get("number"),
+            )
+        return HttpResponseRedirect(reverse("homepage"))
+
+def userlogin(request):
+    msg=""
+    if request.method=="POST":
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user=authenticate(username=username,password=password)  #for authentication .value will be true or false
+        if user:
+            login(request,user)
+            print("login successful")
+            return HttpResponseRedirect(reverse("homepage"))
+        else:
+            print("No such user found")
+            msg="invalid login credentials"
+        print(username,password)
+    return render(request,'homepage.html',{'msg':msg})
+
+def userlogout(request):
+    logout(request)
+    return HttpResponseRedirect(reverse("homepage"))

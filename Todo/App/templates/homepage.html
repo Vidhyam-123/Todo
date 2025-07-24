@@ -23,8 +23,12 @@
                 <h3>About</h3>
             </div>
             <div class="nav-right">
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'logout' %}"><button id="btn1">Logout</button></a>
+                {% else %}
                 <button id="btn1" onclick="pro()">Login</button>
                 <button id="btn2" onclick="signup()">SignUp</button>
+                {% endif %}
             </div>
         </div>
         <div class="home-content">
@@ -205,12 +209,13 @@
     <div class="login" id="loginwrap" >
         <div class="login-card" >
             <div class="login-details">
-                <form action="" method="post">
+                <form action="{% url 'login' %}" method="post">{% csrf_token %}
                 <div class="head">
                 <h3>Login</h3>
                 <h4 id="closebtn" onclick =closePopup()>X</h4></div>
                 <input type="text" name="username" placeholder="Username">
                 <input type="text" name="password" placeholder="Password">
+                <p>{{msg}}</p>
                 <button type="submit" id="btn" >Login</button>
                 </form>
             </div>
@@ -220,7 +225,7 @@
     <div class="signup" id="signupwrap" >
         <div class="signup-card" >
             <div class="signup-details">
-                <form action="" method="post">
+                <form action="{% url 'signup' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
                 <div class="head">
                 <h3>Signup</h3>
                 <h4 id="closbtn" onclick =closePop()>X</h4></div>
