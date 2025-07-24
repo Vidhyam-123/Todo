@@ -30,12 +30,12 @@
         
         <div class="edit-section">
             <h2>Start edit your tasks here.</h2>
-            <form action="" method="POST">
+            <form action="{% url 'edit_task' pk=content.pk %}" method="POST">{% csrf_token %}
                 <label for="todo">Todos:</label>
-                <input type="text" name="todo"  required><br>
+                <input type="text" name="todo" value="{{content.todos}}" required><br>
 
                 <label for="deadline">Deadline:</label>
-                <input type="date" name="deadline"  required><br>
+                <input type="date" name="deadline" value="{{content.deadline}}" required><br>
 
                 <div class="button-container">
                     <button type="submit">Update</button>

@@ -11,8 +11,9 @@ def homepage(request):
     return render(request, 'homepage.html', {'prof': prof})
 def tasks(request):
     return render(request,'tasks.html')
-def edit(request):
-    return render(request,'edit.html')
+def edit(request,pk):
+    content = Task.objects.filter(pk=pk).first()
+    return render(request,'edit.html',{'content':content})
 def signup(request):
     if request.method=="POST":
         user=User.objects.create(username=request.POST.get("username"))
@@ -63,3 +64,29 @@ def profileedit(request,pk):
     return render(request, 'homepage.html', {'prof': proedit})
 
 
+def add_task(request):
+    tasks = Task.objects.filter(user=request.user)
+    if request.method == "POST" and request.user.is_authenticated:
+        todos = request.POST.get("todo")
+        deadline = request.POST.get("deadline")
+        Task.objects.create(
+            user=request.user,
+            todos=todo,
+            deadline=deadline,
+        )
+    return render(request, 'tasks.html', {'tasks': tasks})
+
+    def edit_task(request,pk):
+    task=Task.objects.filter(pk=pk).first()
+    if request.method=="POST":
+        task.todo=request.POST.get("todos")
+        task.deadline=request.POST.get("deadline")
+        task.save()
+    
+    return render(request, 'edit.html',{'content':task})
+
+def taskdelete(request,pk):
+    task=Task.objects.filter(pk=pk).first()
+    task.delete()
+
+    return HttpResponseRedirect(reverse("task"))
