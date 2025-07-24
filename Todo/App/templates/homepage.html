@@ -19,11 +19,15 @@
              <div class="nav-items-center">
                 <h3>Home</h3>
                 <a href="{% url 'tasks' %}"><h3>Task</h3></a>
-                <h3>Features</h3>
+                <a href="#features"><h3>Features</h3></a>
                 <h3>About</h3>
             </div>
             <div class="nav-right">
                 {% if request.user.is_authenticated %}
+                <div class="user-profile" onclick="profile()">
+                    <h1><ion-icon name="person-circle-outline"></ion-icon></h1>
+                    <h4>{{request.user}}</h4>
+                </div>
                 <a href="{% url 'logout' %}"><button id="btn1">Logout</button></a>
                 {% else %}
                 <button id="btn1" onclick="pro()">Login</button>
@@ -123,7 +127,7 @@
                 <h1>Not Against You</h1>
                 <p>Taskly makes managing tasks feel effortless and intuitive.</p>
             </div>
-            <div class="featurecard-container">
+            <div class="featurecard-container" id="features">
                 <div class="feature-row1">
                     <div class="feature-card">
                         <div class="card-icon"><ion-icon name="analytics"></ion-icon></div>
@@ -205,7 +209,25 @@
         
     </div>
 
-
+    <div class="profile" id="profwrap">
+        <div class="profile-card">
+            <div class="profile-details">
+                {% if prof %}
+                <form action="{% url 'profileedit' pk=prof.pk %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+                <div class="head">
+                <h3>Profile</h3>
+                <h4 id="closebtn" onclick =closewrapper()>X</h4></div>
+                <input type="file" name="image">
+                <input type="text" name="firstname" placeholder="First Name" value="{{prof.Firstname}}">
+                <input type="text" name="lastname" placeholder="Last Name" value="{{prof.Lastname}}">
+                <input type="email" name="mail" placeholder="Email" value="{{prof.Email}}">
+                <input type="tel" name="number" id="phone" placeholder="Phone number" maxlength="10" minlength="10" required value="{{prof.Phonenumber}}">
+                <button type="submit" id="btn"> upadte</button>
+                </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
     <div class="login" id="loginwrap" >
         <div class="login-card" >
             <div class="login-details">

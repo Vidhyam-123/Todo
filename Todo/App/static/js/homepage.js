@@ -10,3 +10,9 @@ function signup(){
 function closePop() {
     document.getElementById("signupwrap").style.display = "";
 }
+function profile(){
+    document.getElementById("profwrap").style.display="flex";
+}
+function closewrapper() {
+    document.getElementById("profwrap").style.display = "";
+}
