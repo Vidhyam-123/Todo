@@ -65,10 +65,15 @@
                         <td>{{ i.deadline|date:"d/m/Y" }}</td>
                         {% endif %}
                         <td>
-                           <a href="{% url 'taskcomplete' pk=i.pk %}"><button type="submit" class="btn green"><ion-icon name="checkbox"></ion-icon></button></a> 
+                            {% if i.complete %}
                             <a href="{% url 'taskclose' pk=i.pk %}"><button type="submit" class="btn black"><ion-icon name="close-circle-outline"></ion-icon></button></a>
-                           <a href="{% url 'edit' pk=i.pk %}"><button type="submit" class="btn blue" ><ion-icon name="create-outline"></ion-icon> </button></a>
+                            <a href="{% url 'edit' pk=i.pk %}"><button type="submit" class="btn blue" ><ion-icon name="create-outline"></ion-icon> </button></a>
                             <a href="{% url 'taskdelete' pk=i.pk %}"><button type="submit" class="btn red"><ion-icon name="trash-outline"></ion-icon> </button></a>
+                            {% else %}
+                            <a href="{% url 'taskcomplete' pk=i.pk %}"><button type="submit" class="btn green"><ion-icon name="checkbox"></ion-icon></button></a>
+                            <a href="{% url 'edit' pk=i.pk %}"><button type="submit" class="btn blue" ><ion-icon name="create-outline"></ion-icon> </button></a>
+                            <a href="{% url 'taskdelete' pk=i.pk %}"><button type="submit" class="btn red"><ion-icon name="trash-outline"></ion-icon> </button></a>
+                            {% endif %}
                         </td>
                     </tr>
                     {% empty %}
