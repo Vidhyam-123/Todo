@@ -533,6 +533,9 @@ a{
     .card-icon{
         background-color: #37ff00;
     }
+    .explore-button{
+        color: white;
+    }
 
    }
    .feature-row2 :hover{
@@ -542,6 +545,9 @@ a{
     }
     .card-icon{
         background-color: #37ff00;
+    }
+    .explore-button{
+        color: white;
     }
 
    }
@@ -568,18 +574,17 @@ a{
 
    }
    .explore-button{
-     display: inline-flex;
-      align-items: center;
-      color: black;
-      border: none;
-      outline: none;
-      background-color: white;
-      padding: 12px 20px;
-      border-radius: 30px;
-      font-size: 16px;
-      font-weight: 500;
-      cursor: pointer;
-      gap: 10px;
+      display: inline-flex;
+    align-items: center;
+    color: black;
+    background: none;
+    border: none;
+    outline: none;
+    padding-left: 18px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    gap: 6px; 
       /* transition: background 0.3s ease; */
    }
    .explore-button .arrow-icon{
