@@ -26,7 +26,7 @@
                 <button id="btn1" onclick="">Logout</button>
             </div>
         </div>
-        <a href="{% url 'tasks' %}"><div class="back-button"><ion-icon name="arrow-back-circle-outline"></ion-icon></div></a>
+        <a href="{% url 'add_task' %}"><div class="back-button"><ion-icon name="arrow-back-circle-outline"></ion-icon></div></a>
         
         <div class="edit-section">
             <h2>Start edit your tasks here.</h2>
@@ -35,7 +35,7 @@
                 <input type="text" name="todo" value="{{content.todos}}" required><br>
 
                 <label for="deadline">Deadline:</label>
-                <input type="date" name="deadline" value="{{content.deadline}}" required><br>
+                <input type="date" name="deadline" id="time" value="{{content.deadline|date:'Y-m-d'}}"required> <br>
 
                 <div class="button-container">
                     <button type="submit">Update</button>
@@ -46,6 +46,6 @@
     </div>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>  
-<!-- <script src="{% static 'js/homepage.js' %}"></script> -->
+<!-- <script src="{% static 'js/edit.js' %}"></script> -->
 </body>
 </html>

@@ -7,10 +7,14 @@ from django.contrib.auth import authenticate,login,logout
 
 # Create your views here.
 def homepage(request):
-    prof = Profile.objects.filter(user=request.user).first()
+    try:
+        prof = Profile.objects.filter(user=request.user).first()
+    except:
+        prof = ""
+
     return render(request, 'homepage.html', {'prof': prof})
-def tasks(request):
-    return render(request,'tasks.html')
+# def tasks(request):
+#     return render(request,'tasks.html')
 def edit(request,pk):
     content = Task.objects.filter(pk=pk).first()
     return render(request,'edit.html',{'content':content})
@@ -66,22 +70,25 @@ def profileedit(request,pk):
 
 def add_task(request):
     tasks = Task.objects.filter(user=request.user)
+    # tasks = ""
     if request.method == "POST" and request.user.is_authenticated:
-        todos = request.POST.get("todo")
+        todos = request.POST.get("todos")
         deadline = request.POST.get("deadline")
         Task.objects.create(
             user=request.user,
-            todos=todo,
+            todos=todos,
             deadline=deadline,
         )
+        return HttpResponseRedirect(reverse('add_task')) 
     return render(request, 'tasks.html', {'tasks': tasks})
 
-    def edit_task(request,pk):
+def edit_task(request,pk):
     task=Task.objects.filter(pk=pk).first()
     if request.method=="POST":
         task.todo=request.POST.get("todos")
         task.deadline=request.POST.get("deadline")
         task.save()
+
     
     return render(request, 'edit.html',{'content':task})
 
@@ -89,4 +96,16 @@ def taskdelete(request,pk):
     task=Task.objects.filter(pk=pk).first()
     task.delete()
 
-    return HttpResponseRedirect(reverse("task"))
+    return HttpResponseRedirect(reverse("add_task"))
+
+def taskcomplete(request,pk):
+    task=Task.objects.filter(pk=pk).first()
+    task.complete=True
+    task.save()
+    return HttpResponseRedirect(reverse("add_task"))
+
+def taskclose(request,pk):
+    task=Task.objects.filter(pk=pk).first()
+    task.complete=False
+    task.save()
+    return HttpResponseRedirect(reverse("add_task"))
