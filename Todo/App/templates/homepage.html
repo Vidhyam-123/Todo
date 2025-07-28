@@ -17,17 +17,32 @@
                 <h1>ToDo</h1>
             </div>
              <div class="nav-items-center">
+                {% if request.user.is_authenticated %}
                 <h3>Home</h3>
-                <a href="{% url 'tasks' %}"><h3>Task</h3></a>
+                <a href="{% url 'add_task' %}"><h3>Task</h3></a>
                 <a href="#features"><h3>Features</h3></a>
                 <h3>About</h3>
+                {% else %}
+                <h3>Home</h3>
+                <a href="#features"><h3>Features</h3></a>
+                <h3>About</h3>
+                {% endif %}
             </div>
             <div class="nav-right">
                 {% if request.user.is_authenticated %}
+                {% if not request.user.is_superuser %}
                 <div class="user-profile" onclick="profile()">
-                    <h1><ion-icon name="person-circle-outline"></ion-icon></h1>
+                    <img src="{{prof.image.url}}" alt="" style="width: 40px;height: 40px;border-radius: 100px;object-fit: cover;">
                     <h4>{{request.user}}</h4>
                 </div>
+                {% else %}
+                <div class="user-profile">
+                    <!-- <img src="{{prof.image.url}}" alt="" style="width: 30px;height: 30px;border-radius: 100px;object-fit: cover;"> -->
+                    <h1><ion-icon name="person-circle-outline"></ion-icon></h1>
+                    <!-- <h4><img src="{% static 'images/default-user.png' %}" alt="" ></h4> -->
+                    <h4>{{request.user}}</h4>
+                </div>
+                {% endif %}
                 <a href="{% url 'logout' %}"><button id="btn1">Logout</button></a>
                 {% else %}
                 <button id="btn1" onclick="pro()">Login</button>
@@ -206,6 +221,7 @@
                 </div>
             </div>
         </div>
+        
         
     </div>
 

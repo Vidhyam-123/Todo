@@ -617,8 +617,9 @@ a{
    .user-profile{
     cursor: pointer;
     display: flex;
+    gap: 5px;
     h4{
-        margin-top: 7px;
+        margin-top: 9px;
     }
    }
    .profile {

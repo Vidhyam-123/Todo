@@ -17,7 +17,7 @@
                 <h1>ToDo</h1>
             </div>
              <div class="nav-items-center">
-                <a href="{ % url 'homepage' %}"><h3>Home</h3></a>
+                <a href="{% url 'homepage' %}"><h3>Home</h3></a>
                 <h3>Task</h3>
                 <h3>Features</h3>
                 <h3>About</h3></a>
@@ -31,10 +31,10 @@
             <h6>Add your todos now</h6>
         </div>
         <div class="form-container">
-            <form action="">
+            <form action="{% url 'add_task' %}" method="POST">{% csrf_token %}
                 <div class="addtodo">
-                <input type="text" name="task" placeholder="Enter your tasks">
-                <input type="date" name="date" placeholder="">
+                <input type="text" name="todos" placeholder="Enter your tasks">
+                <input type="date" name="deadline" placeholder="">
                 <button type="submit" id="add">Add todo</button>
                 </div>
             </form>
@@ -52,18 +52,35 @@
                     </tr>
                 </thead>
                 <tbody>
+                     {% for i in tasks %}
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{ forloop.counter }}</td>
+                        {% if i.complete %}
+                        <td style="text-decoration: line-through;">{{ i.created_date|date:"d/m/Y" }}</td>
+                        <td style="text-decoration: line-through;">{{ i.todos }}</td>
+                        <td style="text-decoration: line-through;">{{ i.deadline|date:"d/m/Y" }}</td>
+                        {% else %}
+                        <td>{{ i.created_date|date:"d/m/Y" }}</td>
+                        <td>{{ i.todos }}</td>
+                        <td>{{ i.deadline|date:"d/m/Y" }}</td>
+                        {% endif %}
                         <td>
-                            <button type="submit" class="btn green"><ion-icon name="checkbox"></ion-icon></button>
-                            <button type="submit" class="btn black"><ion-icon name="close-circle-outline"></ion-icon></button>
-                            <a href="{% url 'edit' %}"><button type="submit" class="btn blue" ><ion-icon name="create-outline"></ion-icon> </button></a>
-                            <button type="submit" class="btn red"><ion-icon name="trash-outline"></ion-icon> </button>
+                            {% if i.complete %}
+                            <a href="{% url 'taskclose' pk=i.pk %}"><button type="submit" class="btn black"><ion-icon name="close-circle-outline"></ion-icon></button></a>
+                            <a href="{% url 'edit' pk=i.pk %}"><button type="submit" class="btn blue" ><ion-icon name="create-outline"></ion-icon> </button></a>
+                            <a href="{% url 'taskdelete' pk=i.pk %}"><button type="submit" class="btn red"><ion-icon name="trash-outline"></ion-icon> </button></a>
+                            {% else %}
+                            <a href="{% url 'taskcomplete' pk=i.pk %}"><button type="submit" class="btn green"><ion-icon name="checkbox"></ion-icon></button></a>
+                            <a href="{% url 'edit' pk=i.pk %}"><button type="submit" class="btn blue" ><ion-icon name="create-outline"></ion-icon> </button></a>
+                            <a href="{% url 'taskdelete' pk=i.pk %}"><button type="submit" class="btn red"><ion-icon name="trash-outline"></ion-icon> </button></a>
+                            {% endif %}
                         </td>
                     </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="5">No tasks yet. Start adding some!</td>
+                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
