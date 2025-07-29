@@ -88,6 +88,7 @@ def edit_task(request,pk):
         task.todo=request.POST.get("todos")
         task.deadline=request.POST.get("deadline")
         task.save()
+        return HttpResponseRedirect(reverse('add_task'))
 
     
     return render(request, 'edit.html',{'content':task})
