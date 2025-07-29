@@ -66,6 +66,10 @@ a{
   font-weight: 200;
   border-radius: 13px 13px 13px 13px;
 }
+#btn1:hover{
+    background-color: black;
+    color: white;
+}
 #btn2{
   cursor: pointer;
   height: 35px;
@@ -78,7 +82,10 @@ a{
   font-weight: 200;
   border-radius: 13px 13px 13px 13px;
 }
-
+#btn2:hover{
+    background-color: black;
+    color: white;
+}
 .login {
     display: none;
     flex-direction: column;
@@ -99,7 +106,7 @@ a{
     display: flex;
     position: relative;
     width: 350px;
-    height: 350px;
+    height: 250px;
     background-color: rgb(131, 231, 231);
     border-radius: 20px;
     animation: popup 0.3s ease-in-out;
@@ -533,7 +540,12 @@ a{
     .card-icon{
         background-color: #37ff00;
     }
-
+    .explore-button{
+        color: white;
+    }
+    #symbol{
+        background-color: #37ff00;
+    }
    }
    .feature-row2 :hover{
     background-color: black;
@@ -543,16 +555,18 @@ a{
     .card-icon{
         background-color: #37ff00;
     }
-
+    .explore-button{
+        color: white;
+    }
    }
-   .card-icon{
+   #symbol{
         margin-top: 20px;
         margin-left: 20px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       background-color: #e3e1e1;
-      border-radius: 50%;
+      border-radius: 60%;
       width: 34px;
       height: 34px;
       font-size: 14px;
@@ -567,19 +581,40 @@ a{
       }
 
    }
-   .explore-button{
-     display: inline-flex;
+   .card-icon{
+        margin-top: 20px;
+        margin-left: 20px;
+      display: inline-flex;
       align-items: center;
-      color: black;
-      border: none;
-      outline: none;
-      background-color: white;
-      padding: 12px 20px;
-      border-radius: 30px;
-      font-size: 16px;
-      font-weight: 500;
-      cursor: pointer;
-      gap: 10px;
+      justify-content: center;
+      background-color: #e3e1e1;
+      border-radius: 60%;
+      width: 34px;
+      height: 34px;
+      font-size: 14px;
+      vertical-align: middle;
+      margin-right: 6px;
+      margin-bottom: 20px;
+      ion-icon{
+        /* border: 1px solid black; */
+        height: 18px;
+        width: 18px;
+        /* border-radius: 7px; */
+      }
+
+   }
+   .explore-button{
+      display: inline-flex;
+    align-items: center;
+    color: black;
+    background: none;
+    border: none;
+    outline: none;
+    padding-left: 18px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    gap: 6px; 
       /* transition: background 0.3s ease; */
    }
    .explore-button .arrow-icon{
@@ -700,4 +735,19 @@ a{
 .head{
   display: flex;
 }
-   
+.about-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+    h1{
+        margin-bottom: 40px;
+    }
+    p{
+      font-size: 18px;
+        font-weight: 400;
+        text-align: center;
+        text-justify: inter-word;
+        line-height: 1.8;
+    }
+}  

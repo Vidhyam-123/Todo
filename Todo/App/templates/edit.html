@@ -19,11 +19,11 @@
              <div class="nav-items-center">
                 <a href="{% url 'homepage' %}"><h3>Home</h3></a>
                 <a href="{% url 'add_task' %}"><h3>Task</h3></a>
-                <h3>Features</h3>
-                <h3>About</h3></a>
+                <a href="/#features"><h3>Features</h3></a>
+                <a href="/#about"><h3>About</h3></a>
             </div>
             <div class="nav-right">
-                <button id="btn1" onclick="">Logout</button>
+                <a href="{% url 'logout' %}"><button id="btn1" onclick="">Logout</button></a>
             </div>
         </div>
         <a href="{% url 'add_task' %}"><div class="back-button"><ion-icon name="arrow-back-circle-outline"></ion-icon></div></a>

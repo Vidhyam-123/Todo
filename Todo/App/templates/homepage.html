@@ -25,7 +25,7 @@
                 {% else %}
                 <h3>Home</h3>
                 <a href="#features"><h3>Features</h3></a>
-                <h3>About</h3>
+                <a href="#about"><h3>About</h3></a>
                 {% endif %}
             </div>
             <div class="nav-right">
@@ -135,17 +135,17 @@
                 </div>
             </div>
         </div>
-        <div class="feature-section">
+        <div class="feature-section"  id="features">
             <div class="headings">
                 <h6>Project Progress</h6>
                 <h1>Tools That Work For You</h1>
                 <h1>Not Against You</h1>
                 <p>Taskly makes managing tasks feel effortless and intuitive.</p>
             </div>
-            <div class="featurecard-container" id="features">
+            <div class="featurecard-container">
                 <div class="feature-row1">
                     <div class="feature-card">
-                        <div class="card-icon"><ion-icon name="analytics"></ion-icon></div>
+                        <div class="card-icon" id="symbol"><ion-icon name="analytics"></ion-icon></div>
                         <h3>Organize</h3>
                         <p>Arrange tasks by priority and <br>deadlines.</p>
                         <button class="explore-button">
@@ -154,7 +154,7 @@
                         </button>
                     </div>
                     <div class="feature-card">
-                        <div class="card-icon"><ion-icon name="analytics"></ion-icon></div>
+                        <div class="card-icon"><ion-icon name="calendar-number-outline"></ion-icon></div>
                         <h3>Collaborate</h3>
                         <p>Work together effortlessly in real- <br>time.</p>
                         <button class="explore-button">
@@ -163,7 +163,7 @@
                         </button>
                     </div>
                     <div class="feature-card">
-                        <div class="card-icon"><ion-icon name="analytics"></ion-icon></div>
+                        <div class="card-icon"><ion-icon name="airplane-outline"></ion-icon></div>
                         <h3>Automate</h3>
                         <p>Streamline tasks with smart <br>automations.</p>
                         <button class="explore-button">
@@ -172,7 +172,7 @@
                         </button>
                     </div>
                     <div class="feature-card">
-                        <div class="card-icon"><ion-icon name="analytics"></ion-icon></div>
+                        <div class="card-icon"><ion-icon name="filter-circle-outline"></ion-icon></div>
                         <h3>Track</h3>
                         <p>Track & see project progress at a<br>glance.</p>
                         <button class="explore-button">
@@ -183,16 +183,16 @@
                 </div>
                 <div class="feature-row2">
                     <div class="feature-card">
-                        <div class="card-icon"><ion-icon name="analytics"></ion-icon></div>
+                        <div class="card-icon"><ion-icon name="color-wand-outline"></ion-icon></div>
                         <h3>Integrate</h3>
-                        <p>Connect taskly wth your favourite <br>tools.</p>
+                        <p>Connect taskly with your favourite <br>tools.</p>
                         <button class="explore-button">
                         Explore now
                         <span class="arrow-icon"><ion-icon name="arrow-forward-sharp"></ion-icon></span> <!-- Right Arrow -->
                         </button>
                     </div>
                     <div class="feature-card">
-                        <div class="card-icon"><ion-icon name="analytics"></ion-icon></div>
+                        <div class="card-icon"><ion-icon name="shield-outline"></ion-icon></div>
                         <h3>Customize</h3>
                         <p>Create workflows that suit your <br>style.</p>
                         <button class="explore-button">
@@ -201,7 +201,7 @@
                         </button>
                     </div>
                     <div class="feature-card">
-                        <div class="card-icon"><ion-icon name="analytics"></ion-icon></div>
+                        <div class="card-icon"><ion-icon name="notifications-outline"></ion-icon></div>
                         <h3>Notify</h3>
                         <p>Notify & get timely reminders and <br>updates.</p>
                         <button class="explore-button">
@@ -210,7 +210,7 @@
                         </button>
                     </div>
                     <div class="feature-card">
-                        <div class="card-icon"><ion-icon name="analytics"></ion-icon></div>
+                        <div class="card-icon"><ion-icon name="reader-outline"></ion-icon></div>
                         <h3>Analyze</h3>
                         <p>Gain insights with productivity<br>reports.</p>
                         <button class="explore-button">
@@ -221,7 +221,10 @@
                 </div>
             </div>
         </div>
-        
+        <div class="about-section" id="about">
+            <h1>About</h1>
+            <p>This To-Do App is designed to help users stay organized,<br> focused, and productive by simplifying task management. It allows you to <br> efficiently create, track, and complete daily activities, making it easier to prioritize <br> your goals and manage time effectively. Whether for personal use or work, the app <br>provides a clean and intuitive interface to reduce stress and boost overall efficiency.</p>
+        </div>
         
     </div>
 
@@ -251,8 +254,8 @@
                 <div class="head">
                 <h3>Login</h3>
                 <h4 id="closebtn" onclick =closePopup()>X</h4></div>
-                <input type="text" name="username" placeholder="Username">
-                <input type="text" name="password" placeholder="Password">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
                 <p>{{msg}}</p>
                 <button type="submit" id="btn" >Login</button>
                 </form>
@@ -268,12 +271,12 @@
                 <h3>Signup</h3>
                 <h4 id="closbtn" onclick =closePop()>X</h4></div>
                 <input type="file" name="image">
-                <input type="text" name="firstname" placeholder="Firstname">
-                <input type="text" name="lastname" placeholder="Lastname">
-                <input type="text" name="email" placeholder="Email">
+                <input type="text" name="firstname" placeholder="Firstname" required>
+                <input type="text" name="lastname" placeholder="Lastname" required>
+                <input type="email" name="email" placeholder="Email" required>
                 <input type="tel" name="number" id="phone" placeholder="Phone number" maxlength="10" minlength="10" required>
-                <input type="text" name="username" placeholder="Username">
-                <input type="text" name="password" placeholder="Password">
+                <input type="text" name="username" placeholder="Username"required>
+                <input type="password" name="password" placeholder="Password" required>
                 <button type="submit" id="btn" >SignUp</button>
                 </form>
             </div>
